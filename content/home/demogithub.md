@@ -50,7 +50,7 @@ subtitle = ""
  css_class = ""
 +++
 
-<a href = "https://github.com/leem26/PHS-SummR" style = "float:left">
+<a href = "https://github.com/leem26/PHS-LaunchSite" style = "float:left">
 <i class="fab fa-github fa-7x fa-fw"></i>
 </a>
 

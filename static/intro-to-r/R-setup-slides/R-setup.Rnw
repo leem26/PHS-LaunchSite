@@ -1,0 +1,117 @@
+\documentclass[svgnames,smaller]{beamer}
+\usetheme[progressbar=none, numbering=fraction]{metropolis}
+
+% define colors
+\setbeamercolor{frametitle}{bg=SteelBlue}
+\setbeamercolor{progress bar}{fg=SteelBlue}
+\setbeamercolor{background canvas}{bg=White}
+
+\newcounter{saveenumerate}
+\makeatletter
+\newcommand{\enumeratext}[1]{%
+\setcounter{saveenumerate}{\value{enum\romannumeral\the\@enumdepth}}
+\end{enumerate}
+#1
+\begin{enumerate}
+\setcounter{enum\romannumeral\the\@enumdepth}{\value{saveenumerate}}%
+}
+\makeatother
+
+% \setbeamertemplate{itemize items}[default]
+% \setbeamertemplate{enumerate items}[default]
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{bm}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=magenta,
+    filecolor=magenta,      
+    urlcolor=magenta,
+}
+\setbeamertemplate{footline}{}
+\setbeamertemplate{logo}{%
+    \usebeamercolor[fg]{footline}%
+    \usebeamerfont{page number in head/foot}%
+  \usebeamertemplate*{frame numbering}\hspace{6pt}%
+}
+
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{pgf, tikz}
+\usepackage{tkz-tab}
+\usetikzlibrary{shapes,decorations,arrows,calc,arrows.meta,fit,positioning}
+\usetikzlibrary{arrows,shapes.arrows,shapes.geometric,shapes.multipart,
+decorations.pathmorphing,positioning}
+\tikzstyle{arrow}=[->, >=stealth]
+\tikzset{
+    -Latex,auto,node distance =1 cm and 1 cm,semithick,
+    state/.style ={ellipse, draw, minimum width = 0.7 cm},
+    cond/.style ={rectangle, draw, minimum width = 0.7 cm},
+    point/.style = {circle, draw, inner sep=0.04cm,fill,node contents={}},
+    bidirected/.style={Latex-Latex,dashed},
+    el/.style = {inner sep=2pt, align=left, sloped}
+}
+\usepackage{subcaption}
+\usepackage{caption}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{listings,breakable, skins}
+\newcommand\dummy[1]{#1}
+\let\Begin\begin
+\let\End\end
+\newenvironment{tcbmagenta}[1]
+    {\dummy{\Begin{tcolorbox}[enhanced, breakable=true, title = #1, colback=white, colframe=magenta!75]}
+    }
+    {
+    \End{tcolorbox}
+    }
+
+% magenta bold command
+\newcommand{\bmagenta}[1]{\textcolor{magenta}{\textbf{#1}}}
+
+% mathhbb E
+\newcommand{\E}{\mathbb{E}}
+
+\newcommand{\indep}{\perp \!\!\! \perp}
+
+
+\begin{document}
+
+<<tidy = 'true', size = 'small', fig.height = 5, fig.width = 8.5, echo=FALSE, cache=TRUE, cache.lazy=FALSE, warning=FALSE, message=FALSE>>=
+# libraries 
+library(dplyr)
+library(ggplot2)
+library(ggsci)
+library(wesanderson)
+@
+
+
+%%%%%%%%%%%%%%%%%%%%
+%% TITLE FRAME
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TITLE
+{
+\setbeamercolor{background canvas}{bg=SteelBlue!30}
+\begin{frame}
+\begin{center}
+\vspace{0cm}\large \textcolor{SteelBlue!95}{\textbf{Getting started with R}} \\
+
+{\color{Snow}\hrulefill}
+
+\vspace{0.5cm} \large  \textcolor{SteelBlue!95}{\textbf{Set up and organization tips}} \\
+\textcolor{SteelBlue!95}{Matt Lee (mlee8@g.harvard.edu), PHS Launch 2022}
+\end{center}
+\end{frame}
+}
+
+\small
+
+
+
+
+
+
+
+
+\end{document}

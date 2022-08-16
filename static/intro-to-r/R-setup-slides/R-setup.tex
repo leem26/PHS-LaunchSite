@@ -1,0 +1,158 @@
+\documentclass[svgnames,smaller]{beamer}\usepackage[]{graphicx}\usepackage[]{color}
+% maxwidth is the original width if it is less than linewidth
+% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+\usetheme[progressbar=none, numbering=fraction]{metropolis}
+
+% define colors
+\setbeamercolor{frametitle}{bg=SteelBlue}
+\setbeamercolor{progress bar}{fg=SteelBlue}
+\setbeamercolor{background canvas}{bg=White}
+
+\newcounter{saveenumerate}
+\makeatletter
+\newcommand{\enumeratext}[1]{%
+\setcounter{saveenumerate}{\value{enum\romannumeral\the\@enumdepth}}
+\end{enumerate}
+#1
+\begin{enumerate}
+\setcounter{enum\romannumeral\the\@enumdepth}{\value{saveenumerate}}%
+}
+\makeatother
+
+% \setbeamertemplate{itemize items}[default]
+% \setbeamertemplate{enumerate items}[default]
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{bm}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=magenta,
+    filecolor=magenta,      
+    urlcolor=magenta,
+}
+\setbeamertemplate{footline}{}
+\setbeamertemplate{logo}{%
+    \usebeamercolor[fg]{footline}%
+    \usebeamerfont{page number in head/foot}%
+  \usebeamertemplate*{frame numbering}\hspace{6pt}%
+}
+
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{pgf, tikz}
+\usepackage{tkz-tab}
+\usetikzlibrary{shapes,decorations,arrows,calc,arrows.meta,fit,positioning}
+\usetikzlibrary{arrows,shapes.arrows,shapes.geometric,shapes.multipart,
+decorations.pathmorphing,positioning}
+\tikzstyle{arrow}=[->, >=stealth]
+\tikzset{
+    -Latex,auto,node distance =1 cm and 1 cm,semithick,
+    state/.style ={ellipse, draw, minimum width = 0.7 cm},
+    cond/.style ={rectangle, draw, minimum width = 0.7 cm},
+    point/.style = {circle, draw, inner sep=0.04cm,fill,node contents={}},
+    bidirected/.style={Latex-Latex,dashed},
+    el/.style = {inner sep=2pt, align=left, sloped}
+}
+\usepackage{subcaption}
+\usepackage{caption}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{listings,breakable, skins}
+\newcommand\dummy[1]{#1}
+\let\Begin\begin
+\let\End\end
+\newenvironment{tcbmagenta}[1]
+    {\dummy{\Begin{tcolorbox}[enhanced, breakable=true, title = #1, colback=white, colframe=magenta!75]}
+    }
+    {
+    \End{tcolorbox}
+    }
+
+% magenta bold command
+\newcommand{\bmagenta}[1]{\textcolor{magenta}{\textbf{#1}}}
+
+% mathhbb E
+\newcommand{\E}{\mathbb{E}}
+
+\newcommand{\indep}{\perp \!\!\! \perp}
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%
+%% TITLE FRAME
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TITLE
+{
+\setbeamercolor{background canvas}{bg=SteelBlue!30}
+\begin{frame}
+\begin{center}
+\vspace{0cm}\large \textcolor{SteelBlue!95}{\textbf{Getting started with R}} \\
+
+{\color{Snow}\hrulefill}
+
+\vspace{0.5cm} \large  \textcolor{SteelBlue!95}{\textbf{Matt Lee (mlee8@g.harvard)}} \\
+\textcolor{SteelBlue!95}{ name, date}
+\end{center}
+\end{frame}
+}
+
+\small
+
+
+
+
+
+
+\end{document}

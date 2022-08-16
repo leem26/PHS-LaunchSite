@@ -30,7 +30,7 @@ subtitle = ""
   
   # Background image.
   image = "headers/phsgroupphoto.jpg"  # Name of image in `static/img/`.
-  image_darken = 0.6  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
+  image_darken = 0.3  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
   image_size = "cover"  #  Options are `cover` (default), `contain`, or `actual` size.
   image_position = "center"  # Options include `left`, `center` (default), or `right`.
   image_parallax = true  # Use a fun parallax-like fixed background effect? true/false
@@ -51,12 +51,12 @@ subtitle = ""
 +++
 
 
-<img src="/img/logo.png" width="350" height="350" style = "float:right" alt=""/> 
+<img src="/img/PHS_Launch2022.png" width="350" height="350" style = "float:right" alt=""/> 
 
 <div style="clear: right">
 <h1> <b> WELCOME! </b> </h1>
 
-Welcome to the Population Health Science SummR Camp 2020, we're excited for you to join us! Here you will find select <code>R</code> exercises, lecture slides, and supplemental material that will be referenced during our lectures. If you have any questions during these sessions, please feel free to reach out to any member of the teaching team or use the contact form below. A schedule of this week's sessions is also found below. 
+Welcome to the Population Health Science Launch 2022, we're excited for you to join us! Here you will find session slides, schedules, and supplemental material that will be referenced during  lectures. If you have any questions during these sessions, please feel free to reach out to any member of the PHS team. A schedule of this week's sessions is also found below. 
 </div>
 
 

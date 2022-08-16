@@ -67,6 +67,8 @@
 }
 \makeatother
 
+\setlength{\leftmargini}{1pt}
+
 % \setbeamertemplate{itemize items}[default]
 % \setbeamertemplate{enumerate items}[default]
 
@@ -142,14 +144,92 @@ decorations.pathmorphing,positioning}
 
 {\color{Snow}\hrulefill}
 
-\vspace{0.5cm} \large  \textcolor{SteelBlue!95}{\textbf{Matt Lee (mlee8@g.harvard)}} \\
-\textcolor{SteelBlue!95}{ name, date}
+\textcolor{SteelBlue!95}{Matt Lee (mlee8@g.harvard.edu), PHS Launch 2022}
 \end{center}
 \end{frame}
 }
 
 \small
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  What is R
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{What is R?}
+
+\begin{itemize}
+    \item R is an open-source \textbf{interpreted} programming language: when you install R, you install an \textit{interpreter} that translates your R code into computer code (sometimes called ``machine'' code), which is what actually gets run
+    \item This is in contrast to \textbf{compiled} languages (e.g. C or C++), where the programmer writes code that is directly converted into machine code
+    \item Several advantages of interpreted languages: much more user friendly, easily read, consistent across operating systems
+    \item Some disadvantages: often slower, and less control over system hardware$^*$
+\end{itemize}
+
+\vspace{1em}
+
+\bmagenta{Action step:} Install R (https://cloud.r-project.org/) 
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  R studio
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{R Studio: Integrated Development Environments (IDEs)}
+
+\begin{itemize}
+    \item We can interact with R directly via a command line (e.g. Terminal)
+    \begin{figure}[tb]
+    \centering
+    \includegraphics[width = .35\textwidth]{R-terminal.png}
+    \end{figure}
+    \item But this is not very pretty or reproducible! A population alternative is to use an IDE, such as R Studio, which is a program that adds a whole lot of convenience to writing and running R code
+    \item IDEs are not the language themselves, they provide a way to interact with the language installed on your computer in a friendly way
+\end{itemize}
+
+\bmagenta{Action step:} Install R Studio (https://www.rstudio.com/products/rstudio/download/) 
+
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  Working in R Studio
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Working in R Studio}
+
+Key R Studio panes:
+\begin{itemize}
+    \item Console: Runs R code, either interactively or via an R script
+    \item Terminal: Convenient terminal application (primarily useful for version control programs like git/GitHub)
+    \item Environment: Objects you've saved to your \textbf{working R environment}
+    \item Files: File navigator, useful if you need to figure out where data/R scripts are located
+    \item Plots: Plots generated will populate in this pane -- you can also export plots you create using the ``Export'' button
+\end{itemize}
+
+
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  Open questions/work
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Troubleshooting/Q\&A}
+
+
+
+\end{frame}
 
 
 

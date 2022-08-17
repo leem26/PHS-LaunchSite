@@ -51,7 +51,7 @@ subtitle = ""
 +++
 
 
-<img src="/img/PHS_Launch2022.png" width="350" height="350" style = "float:right" alt=""/> 
+<img src="/img/PHSLaunch2022.png" width="350" height="350" style = "float:right" alt=""/> 
 
 <div style="clear: right">
 <h1> <b> WELCOME! </b> </h1>

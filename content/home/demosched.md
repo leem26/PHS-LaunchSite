@@ -77,7 +77,6 @@ subtitle = ""
 | 11:10-11:40am     |  Resources introduction | Kresge 200 |
 | 11:40am-12:00pm     |  Q&A | Kresge 200 |
 | Afternoon     |  Field of Study Orientations | Various |
-| 6:00-8:00pm     |  PHS dinner event | TBD |
 
 
 <br>

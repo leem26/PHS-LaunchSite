@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.24)  16 AUG 2022 14:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.24)  16 AUG 2022 15:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**\nonstopmode \input ./R-setup.tex \input ./R-setup.tex
+**\nonstopmode \input ./R-setup.tex
 (./R-setup.tex (/usr/local/texlive/2021/texmf-dist/tex/latex/beamer/beamer.cls
 Document Class: beamer 2021/03/19 v3.62 A class for typesetting presentations
 (/usr/local/texlive/2021/texmf-dist/tex/latex/beamer/beamerbasemodes.sty
@@ -1454,6 +1454,10 @@ Package pdftex.def Info: R-terminal.png  used on input line 197.
 
 ] [5
 
+] [6
+
+] [7
+
 ]
 \tf@nav=\write8
 \openout8 = `R-setup.nav'.
@@ -1470,13 +1474,13 @@ Package rerunfilecheck Info: File `R-setup.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 34126 strings out of 478994
- 714527 string characters out of 5858183
- 1060063 words of memory out of 5000000
- 50877 multiletter control sequences out of 15000+600000
- 416118 words of font info for 66 fonts, out of 8000000 for 9000
+ 34137 strings out of 478994
+ 714621 string characters out of 5858183
+ 1062063 words of memory out of 5000000
+ 50883 multiletter control sequences out of 15000+600000
+ 416285 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 131i,11n,132p,1887b,518s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 131i,11n,132p,1866b,518s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb>
 </usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></
@@ -1484,11 +1488,13 @@ usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></us
 r/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></u
 sr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></us
 r/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/
-local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb>
-Output written on R-setup.pdf (5 pages, 284626 bytes).
+local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/lo
+cal/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/loca
+l/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb>
+Output written on R-setup.pdf (7 pages, 306944 bytes).
 PDF statistics:
- 77 PDF objects out of 1000 (max. 8388607)
- 54 compressed objects within 1 object stream
- 11 named destinations out of 1000 (max. 500000)
+ 98 PDF objects out of 1000 (max. 8388607)
+ 71 compressed objects within 1 object stream
+ 15 named destinations out of 1000 (max. 500000)
  48 words of extra memory for PDF output out of 10000 (max. 10000000)
 

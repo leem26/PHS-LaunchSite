@@ -67,7 +67,7 @@
 }
 \makeatother
 
-\setlength{\leftmargini}{1pt}
+\setlength{\leftmargini}{2em}
 
 % \setbeamertemplate{itemize items}[default]
 % \setbeamertemplate{enumerate items}[default]
@@ -214,9 +214,54 @@ Key R Studio panes:
     \item Plots: Plots generated will populate in this pane -- you can also export plots you create using the ``Export'' button
 \end{itemize}
 
+\end{frame}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  R scripts
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{R Scripting}
+
+Use of an \textbf{R script} helps keep your code neat and reproducible
+\begin{itemize}
+    \item In R Studio: File $\rightarrow$ New File $\rightarrow$ R Script
+    \item This is simply a text file with the extension ``.R'' that will hold all of the R commands we want to run
+    \item Similar to other languages, ``\#'' is reserved for comments
+\end{itemize}
+
+There are 5 main \textbf{data types} in R:
+\begin{itemize}
+    \item Character (e.g. \texttt{"hello world"})
+    \item Numeric (e.g. \texttt{3.14159265})
+    \item Integer (e.g. \texttt{5L})
+    \item Logical (\texttt{TRUE}, \texttt{FALSE})
+    \item Complex (\texttt{1i})
+\end{itemize}
 
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  R scripts
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{R Scripting}
+
+R also has various \texttt{data structures}, but the main ones are:
+\begin{itemize}
+    \item Vectors: a collection of elements of one data type
+    \item Lists: a collection of objects of arbitrary types (e.g. the first element could be a vector, the second element could be a matrix, the third element could be a data frame)
+    \item Matrices: a vector (so much be one data type only), with dimensions defined
+    \item Data frames: structure that most resembles a data set, each variable is a single data type
+    \item Factors: a numeric vector that has a label attribute
+\end{itemize}
+
+\end{frame}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -70,6 +70,9 @@ decorations.pathmorphing,positioning}
     \End{tcolorbox}
     }
 
+
+\usepackage{dirtree}
+
 % magenta bold command
 \newcommand{\bmagenta}[1]{\textcolor{magenta}{\textbf{#1}}}
 
@@ -198,6 +201,8 @@ There are 5 main \textbf{data types} in R:
     \item Complex (\texttt{1i})
 \end{itemize}
 
+Other special values include missing (\texttt{NA}), not-a-number (\texttt{NaN}), null (\texttt{NULL}), and infinity (\texttt{Inf}, \texttt{-Inf})
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -206,19 +211,508 @@ There are 5 main \textbf{data types} in R:
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{R Scripting}
+\begin{frame}[fragile]{R Scripting}
 
-R also has various \texttt{data structures}, but the main ones are:
+R also has various \textbf{data structures}, but the main ones are:
 \begin{itemize}
     \item Vectors: a collection of elements of one data type
     \item Lists: a collection of objects of arbitrary types (e.g. the first element could be a vector, the second element could be a matrix, the third element could be a data frame)
-    \item Matrices: a vector (so much be one data type only), with dimensions defined
+    \item Matrices: a vector with dimensions defined
     \item Data frames: structure that most resembles a data set, each variable is a single data type
-    \item Factors: a numeric vector that has a label attribute
+    \item Factors: a numeric vector that has a label attribute (like a Stata label)
+\end{itemize}
+
+
+R is also built on \textbf{functions}, some of which are provided in the base installation and others that can be installed or created from scratch:
+
+<<size = 'scriptsize', fig.height = 5, fig.width = 8.5, eval = FALSE, echo=TRUE, cache=TRUE, cache.lazy=FALSE>>=
+a_function_with_3_args(arg1 = ..., arg2 = ..., arg3 = ...)
+@
+Functions take \textbf{arguments} or inputs, and return \textbf{values} (in R parlance) or outputs. 
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  R Basics
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{R Basics}
+
+Creating a vector, then assigning it to the variable \texttt{x} or \texttt{y}:
+
+<<size = 'scriptsize', fig.height = 5, fig.width = 8.5, echo=TRUE>>=
+# "<-" is the assignment operator
+x <- c(1, 2, 3) # c() is a function! 
+print(x)
+
+# short hand for sequences of numbers
+y <- 1:3
+print(y)
+
+# vectors can contain strings
+a_string <- c("hello", "world")
+print(a_string)
+@
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  R Basics
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{R Basics}
+
+What type of vector is \texttt{what\_type}:
+
+<<size = 'scriptsize', fig.height = 5, fig.width = 8.5, echo=TRUE>>=
+what_type <- c(1, "hello")
+print(what_type)
+@
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  R Basics
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{R Basics}
+
+Generating matrices and data frames:
+
+<<size = 'scriptsize', fig.height = 5, fig.width = 8.5, echo=TRUE>>=
+my_mat <- matrix(data = c(1:9), nrow = 3, ncol = 3)
+print(my_mat)
+
+# turning this into a data frame
+my_df <- data.frame(my_mat)
+print(my_df)
+@
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  R Basics
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{R Basics}
+
+Indexing into 2-dimensional matrices and data frames:
+
+<<size = 'scriptsize', fig.height = 5, fig.width = 8.5, echo=TRUE>>=
+my_mat <- matrix(data = c(1:9), nrow = 3, ncol = 3)
+print(my_mat[2,3]) # bracket method [row, column]
+
+my_df <- data.frame(my_mat)
+print(my_df$X1)  # pulling out a column of a data.frame
+print(my_df[,1]) # brackets work here too
+print(my_df[2,3]) 
+@
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  R Basics
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{R Basics}
+
+R does math (e.g. \texttt{+, -,  *, /, >, >=, ==}):
+
+<<size = 'scriptsize', fig.height = 5, fig.width = 8.5, echo=TRUE>>=
+# rnorm() simulates draws from normal distributions
+x <- rnorm(n = 10, mean = 0, sd = 3) 
+print(x)
+head(x) # what does head do? 
+
+mean(x)
+x[1] + x[2] # indexing for vectors (i.e. a 1-dimension matrix)
+@
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  R Basics
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{R Basics}
+
+Many of these operators can also be used to index in more nuanced ways: 
+<<size = 'scriptsize', fig.height = 5, fig.width = 8.5, echo=TRUE>>=
+x <- c(1, 2, 3, 4, 5, 5)
+
+# indexing using operators
+x < 3
+x[x < 3]
+x[x == 7]
+x[x == 5]
+@
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  R Basics
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{R Basics}
+
+Beware default behavior for missing data:
+
+<<size = 'scriptsize', fig.height = 5, fig.width = 8.5, echo=TRUE>>=
+
+x <- c(1, 3, 5, NA)
+print(x)
+
+mean(x)
+
+mean(x, na.rm = TRUE)
+@
+
+\texttt{na.rm = TRUE} is an example of an \textbf{optional argument} we can pass to the \texttt{mean()} function, telling R to ignore the missing values
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  R Basics Check
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{R Basics: Check in}
+
+\bmagenta{Complete the following for understanding.} In an R script:
+\begin{enumerate}
+    \item Create a vector, \texttt{z} $ = \{0, 0, 4, 6, 7, 10\}$
+    \item Print the first 3 elements of \texttt{z}
+    \item Calculate the standard deviation of \texttt{z} (\textit{hint: look at the sd() function. Entering ``?sd'' in the R console will bring up its documentation. What arguments does this function take?})
+    \item Replace the 4th element of \texttt{z} with \texttt{NaN} (\textit{hint: combine what you know about indexing with the assignment operator})
+    \item Calculate the standard deviation of this new vector
+    \item Save the R script with this code to your desktop folder
+\end{enumerate}
+
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  R Basics for data
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{R Basics for Data}
+
+A general pipeline for working with data (in R or any other language) is to: 
+\begin{enumerate}
+    \item Read in the raw data
+    \item Clean data (saved to a new object)
+    \item Analyze data
+    \item Produce results
+\end{enumerate}
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  R Basics for data
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{R Basics for Data}
+
+Data can be read into R in various ways depending on the type of file -- the base installation includes functions to read in CSV files:
+<<size = 'scriptsize', fig.height = 5, fig.width = 8.5, eval = FALSE, echo=TRUE, cache=TRUE, cache.lazy=FALSE>>=
+my_data <- read.csv("path/to/csv_file.csv")
+@
+
+For other types of data files, other packages may need to be installed:
+<<size = 'scriptsize', fig.height = 5, fig.width = 8.5, eval = FALSE, echo=TRUE, cache=TRUE, cache.lazy=FALSE>>=
+install.packages("haven")
+library(haven)
+my_stata_data <- read_dta("path/to/stata_file.dta")
+
+install.packages("openxlsx")
+library(openxlsx)
+my_xlsx_data <- read.xlsx("path/to_excel_file.xlsx")
+@
+
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  R Basics for data
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{R Basics for Data}
+
+For example, let's say we have a file called "dat.csv" that's located in my desktop folder, with variables for age and whether an individual is an Aquarius:
+<<size = 'scriptsize', fig.height = 5, fig.width = 8.5, echo=FALSE, cache=TRUE, cache.lazy=FALSE>>=
+n <- 5000
+set.seed(1)
+my_data <- data.frame(age = abs(floor(rnorm(n, 30, 3))), aquarius = rbinom(n, 1, 0.5))
+@
+
+<<size = 'scriptsize', fig.height = 5, fig.width = 8.5, eval = FALSE, echo=TRUE, cache=TRUE, cache.lazy=FALSE>>=
+my_data <- read.csv("/Users/matthewlee/Desktop/dat.csv")
+@
+
+Basic summary of the data:
+<<size = 'scriptsize', fig.height = 5, fig.width = 8.5, echo=TRUE, cache=TRUE, cache.lazy=FALSE>>=
+summary(my_data)
+nrow(my_data)
+@
+
+
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  R Basics for data
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{R Basics for Data}
+
+Let's say we want to generate a new variable, \texttt{notAquarius}, the reciprocal of \texttt{aquarius}. Good practice is to \textbf{not alter the raw data}, so we'll create a copy. In base R we could do:
+<<size = 'scriptsize', fig.height = 5, fig.width = 8.5, echo=TRUE, cache=TRUE, cache.lazy=FALSE>>=
+clean_data <- my_data
+
+# dollar sign to index the new and old vars
+clean_data$notAquarius <- abs(1 - clean_data$aquarius) 
+head(clean_data)
+@
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  R Basics for data
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{R Basics for Data}
+
+The tidyverse collection of packages, including \texttt{dplyr}, provides some convenient methods for working with data beyond base R. Packages must be installed using the \texttt{install.packages()} function, and loaded using the \texttt{library()} function.
+
+<<size = 'scriptsize', fig.height = 5, fig.width = 8.5, eval = FALSE, echo=TRUE, cache=TRUE, cache.lazy=FALSE>>=
+install.packages("dplyr")
+library(dplyr)
+@
+
+A key feature of \texttt{dplyr} is the \textbf{pipe operator}, denoted by \texttt{\%>\%}, which allows us to feed the results of one function directly into another without creating a new intermediate object.
+<<size = 'scriptsize', fig.height = 5, fig.width = 8.5, eval = FALSE, echo=TRUE, cache=TRUE, cache.lazy=FALSE>>=
+a_data_frame %>% 
+    filter(x1 > 5) %>% # filtering to obs where x1 > 5
+    summarize(mean_of_y = mean(y)) # mean of y in this subset
+@
+There is detailed documentation for the many functions in the tidyverse packages, which can be found here at: https://www.tidyverse.org/
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  R Basics for data
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{R Basics for Data}
+
+We can use \texttt{dplyr} functions to generate our \texttt{notAquarius} as well using the \texttt{mutate()} function:
+<<size = 'scriptsize', fig.height = 5, fig.width = 8.5, eval = TRUE, echo=TRUE, cache=TRUE, cache.lazy=FALSE>>=
+clean_data <- 
+    my_data %>% 
+    mutate(notAquarius = abs(1 - aquarius))
+head(clean_data)
+@
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  R Basics for data
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{R Basics for Data}
+
+Finally, let's do a basic analysis to compute the proportion of individuals who are an Aquarius by age. Again, \texttt{dplyr} functions make this so simple! 
+<<size = 'scriptsize', fig.height = 5, fig.width = 8.5, eval = TRUE, echo=TRUE, cache=TRUE, cache.lazy=FALSE>>=
+aqua_age <- 
+    clean_data %>% 
+    group_by(age) %>% # group by each unique age 
+    summarize(prop_aquarius = mean(aquarius))
+
+nrow(aqua_age); head(aqua_age)
+@
+There are quite a few rows to this output, so maybe a table isn't the best way to visualize
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  R Basics for data
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{R Basics for Data}
+
+Luckily, R has some great plotting functions:
+<<size = 'scriptsize', fig.height = 3, fig.width = 8.5, eval = TRUE, echo=TRUE, cache=TRUE, cache.lazy=FALSE>>=
+plot(x = aqua_age$age, y = aqua_age$prop_aquarius, 
+     xlab = "Age", ylab = "Propotion Aquarius", main = "Aquarius Plot")
+@
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  R Basics for data
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{R Basics for Data}
+
+Another popular package for plotting is \texttt{ggplot2}:
+<<size = 'scriptsize', fig.height = 3, fig.width = 8.5, eval = FALSE, echo=TRUE, cache=TRUE, cache.lazy=FALSE>>=
+library(ggplot2)
+ggplot(data = aqua_age, 
+       mapping = aes(x = age, y = prop_aquarius)) +
+    geom_point() + 
+    geom_line() + 
+    theme_bw() + 
+    labs(title = "Aquarius Plot", x = "Age", y = "Proportion Aquarius")
+@
+Elements of ggplots are strung together using the $+$ operator
+\begin{itemize}
+    \item Plots start with the \texttt{ggplot()} function, which define the data to be plotted as well as the \textit{aesthetics} (e.g. x/y variables, colors, fills, groups)
+    \item \texttt{geom\_point()} creates a scatter plot 
+    \item \texttt{geom\_line()} then layers on a line plot
+    \item \texttt{theme\_bw()} adjusts the basic look of the plot
+    \item \texttt{labs()} allows us to assign labels
 \end{itemize}
 
 \end{frame}
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  R Basics for data
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{R Basics for Data}
+
+<<size = 'scriptsize', fig.height = 3, fig.width = 8.5, eval = TRUE, echo=FALSE, cache=TRUE, cache.lazy=FALSE>>=
+ggplot(data = aqua_age, 
+       mapping = aes(x = age, y = prop_aquarius)) +
+    geom_point() + 
+    geom_line() + 
+    theme_bw() + 
+    labs(title = "Aquarius Plot", x = "Age", y = "Proportion Aquarius")
+@
+
+\texttt{ggplot2} is another package that has a bunch of functions to customize your plots. Documentation can be found \href{https://ggplot2.tidyverse.org/index.html}{here}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  R Data Check
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{R Basics for Data: Check in}
+
+\bmagenta{Complete the following for understanding.} 
+\begin{enumerate}
+    \item Download the demographics data from the 2017-18 cycle of NHANES, located \href{https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Demographics&CycleBeginYear=2017}{here}.
+    \item In an R script:
+    \begin{enumerate}
+        \item Read in this data set (an .xpt file -- you will need a function from the \textbf{haven} package, look up the documentation or Google to figure out which one)
+        \item Pick two variables (one continuous, one categorical) of interest using the documentation \href{https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm}{posted online}, and create a new version of the dataset that only contains these two variables (\textit{hint: the \texttt{select()} function from the dplyr package might be useful})
+        \item For the categorical variable, the actual values are probably numeric. Using the NHANES documentation, create a new \textbf{factor} variable that adds informative labels to the original. (\textit{hint: the \texttt{factor()} function might be useful})
+        \item Calculate the mean of the continuous variable by levels of the categorical level, and create a plot to show your results.
+    \end{enumerate}
+\end{enumerate}
+
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  R Data Management
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Analysis Management Tips}
+
+Here is a basic organization scheme that I use (prob overkill for classwork):
+\dirtree{%
+.1 Project folder.
+.2 Folder for R code.
+.3 R.
+.4 readclean.R.
+.4 models.R.
+.4 create\_tables.R.
+.4 create\_figures.R.
+.2 out.
+.2 run\_analysis.R.
+}
+\begin{itemize}
+    \item The R/ subfolder has general functions I write to clean the data, run the models, and generate results
+    \item The out/ folder is where I save all of my output
+    \item The run\_analysis.R file is a wrapper script that calls all the functions needed to run through an analysis from start to finish. I usually run this file using the R command \texttt{rmarkdown::render(``run\_analysis.R'')}, which will execute all the commands and generate a nice output file
+\end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  R Tips
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Other R Tips}
+
+\begin{itemize}
+    \item If you are unsure what a function does or what arguments it takes, calling ``\texttt{?mean}'' or ``\texttt{??mean}'' will bring up or search help/documentation files
+    \item Stack Overflow and Google are your best friends. If you have a question or see an error message, it's likely that someone else has also had the same issue and posted it to an online forum. Copy/pasting your error messages into Google is a good place to start when troubleshooting
+    \item R is \textbf{case sensitive}, so a variable called \texttt{newvar} is different than a variable called \texttt{NewVar}
+    \item Avoid using R function names for objects, e.g. don't do the following:
+    <<size = 'scriptsize', fig.height = 5, fig.width = 8.5, eval = FALSE, echo=TRUE, cache=TRUE, cache.lazy=FALSE>>=
+    mean <- 9
+    @
+    \item Sometimes restarting R (or your computer) resolves some issues
+    \item R cheat sheets are nice references: https://rstudio.com/resources/cheatsheets/
+\end{itemize}
+\end{frame}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

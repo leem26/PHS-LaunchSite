@@ -1,0 +1,15 @@
+\frametitle{R Basics for Data: Check in}
+
+\bmagenta{Complete the following for understanding.}
+\begin{enumerate}
+    \item Download the demographics data from the 2017-18 cycle of NHANES, located \href{https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Demographics&CycleBeginYear=2017}{here}.
+    \item In an R script:
+    \begin{enumerate}
+        \item Read in this data set (an .xpt file -- you will need a function from the \textbf{haven} package, look up the documentation or Google to figure out which one)
+        \item Pick two variables (one continuous, one categorical) of interest using the documentation \href{https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm}{posted online}, and create a new version of the dataset that only contains these two variables (\textit{hint: the \texttt{select()} function from the dplyr package might be useful})
+        \item For the categorical variable, the actual values are probably numeric. Using the NHANES documentation, create a new \textbf{factor} variable that adds informative labels to the original. (\textit{hint: the \texttt{factor()} function might be useful})
+        \item Calculate the mean of the continuous variable by levels of the categorical level, and create a plot to show your results.
+    \end{enumerate}
+\end{enumerate}
+
+

@@ -76,11 +76,11 @@
   weight = 6
   identifier = "intro-to-r-parent"
   
-  # [[main]]
-  #   name = "Intro to R Slides"
-  #   url = "/intro-to-r/PHS_SummR_Camp_Intro_to_R_2020.pdf"
-  #   parent = "intro-to-r-parent"
-  #   weight = 1
+  [[main]]
+    name = "Intro to R Slides"
+    url = "/intro-to-r/R-setup-slides/R-setup.pdf"
+    parent = "intro-to-r-parent"
+    weight = 1
     
   # [[main]]
   #   name = "Github Repo"

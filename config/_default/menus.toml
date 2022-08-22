@@ -10,7 +10,7 @@
   identifier = "intro-to-phs-parent"
   
   [[main]]
-    name = "Slides"
+    name = "Welcome Slides"
     url = "/welcome-slides/introduction.pdf"
     parent = "intro-to-phs-parent"
     weight = 1

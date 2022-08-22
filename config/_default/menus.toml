@@ -10,7 +10,7 @@
   identifier = "intro-to-phs-parent"
   
   [[main]]
-  name = "Slides (pdf)"
+  name = "Slides"
   url = "/welcome-slides/bootcamp_introduction.pdf"
   parent = "intro-to-phs-parent"
   weight = 1
@@ -22,7 +22,7 @@
   identifier = "notation-parent"
   
   [[main]]
-    name = "Slides (pdf)"
+    name = "Slides"
     url = "/notation-slides/bootcamp_mathematicalNotation.pdf"
     parent = "notation-parent"
     weight = 1

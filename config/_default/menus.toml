@@ -15,6 +15,12 @@
     parent = "intro-to-phs-parent"
     weight = 1
 
+  [[main]]
+    name = "Values Survey"
+    url = "https://harvard.az1.qualtrics.com/jfe/form/SV_1RkvbQZsbAA3n5I"
+    parent = "intro-to-phs-parent"
+    weight = 2
+
 [[main]]
   name = "Notation"
   url = "notation"

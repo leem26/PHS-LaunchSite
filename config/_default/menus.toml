@@ -9,11 +9,11 @@
   weight = 1
   identifier = "intro-to-phs-parent"
   
-  # [[main]]
-  # name = "Slides (pdf)"
-  # # url = "/welcome-slides/PHSSummrCamp_introduction.pdf"
-  # parent = "intro-to-phs-parent"
-  # weight = 1
+  [[main]]
+  name = "Slides (pdf)"
+  url = "/welcome-slides/bootcamp_introduction.pdf"
+  parent = "intro-to-phs-parent"
+  weight = 1
 
 [[main]]
   name = "Notation"
@@ -21,14 +21,14 @@
   weight = 2
   identifier = "notation-parent"
   
-  # [[main]]
-  #   name = "Slides (pdf)"
-  #   # url = "/notation-slides/PHSSummrCamp_mathematicalNotation.pdf"
-  #   parent = "notation-parent"
-  #   weight = 1
+  [[main]]
+    name = "Slides (pdf)"
+    url = "/notation-slides/bootcamp_mathematicalNotation.pdf"
+    parent = "notation-parent"
+    weight = 1
   
   [[main]]
-    name = "Sweave Guide (pdf)"
+    name = "R Sweave Guide"
     url = "/sweave-guide/guide.pdf"
     parent = "notation-parent"
     weight = 2

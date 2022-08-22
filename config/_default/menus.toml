@@ -10,10 +10,10 @@
   identifier = "intro-to-phs-parent"
   
   [[main]]
-  name = "Slides"
-  url = "/welcome-slides/bootcamp_introduction.pdf"
-  parent = "intro-to-phs-parent"
-  weight = 1
+    name = "Slides"
+    url = "/welcome-slides/bootcamp_introduction.pdf"
+    parent = "intro-to-phs-parent"
+    weight = 1
 
 [[main]]
   name = "Notation"

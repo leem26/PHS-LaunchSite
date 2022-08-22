@@ -11,7 +11,7 @@
   
   [[main]]
     name = "Slides"
-    url = "/welcome-slides/bootcamp_introduction.pdf"
+    url = "/welcome-slides/introduction.pdf"
     parent = "intro-to-phs-parent"
     weight = 1
 

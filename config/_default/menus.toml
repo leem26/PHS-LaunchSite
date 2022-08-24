@@ -34,7 +34,7 @@
   identifier = "notation-parent"
   
   [[main]]
-    name = "Slides"
+    name = "Notation Slides"
     url = "/notation-slides/bootcamp_mathematicalNotation.pdf"
     parent = "notation-parent"
     weight = 1
@@ -52,7 +52,7 @@
   identifier = "math-review-parent"
   
   [[main]]
-    name = "Slides"
+    name = "Math Slides"
     url = "/math-review-slides/math_review_2022.pdf"
     parent = "math-review-parent"
     weight = 1
@@ -64,7 +64,7 @@
   identifier = "prob-review-parent"
   
   [[main]]
-    name = "Slides"
+    name = "Probability Slides"
     url = "/prob-slides/probability_2022.pdf"
     parent = "prob-review-parent"
     weight = 1

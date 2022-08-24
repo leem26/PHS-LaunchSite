@@ -16,10 +16,16 @@
     weight = 1
 
   [[main]]
+    name = "Launch Slides"
+    url = "/welcome-slides/launch-slides.pdf"
+    parent = "intro-to-phs-parent"
+    weight = 2
+
+  [[main]]
     name = "Values Survey"
     url = "https://harvard.az1.qualtrics.com/jfe/form/SV_1RkvbQZsbAA3n5I"
     parent = "intro-to-phs-parent"
-    weight = 2
+    weight = 3
 
 [[main]]
   name = "Notation"

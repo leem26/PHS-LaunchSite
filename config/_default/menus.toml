@@ -52,7 +52,7 @@
   identifier = "math-review-parent"
   
   [[main]]
-    name = "Slides (pdf)"
+    name = "Slides"
     url = "/math-review-slides/math_review_2022.pdf"
     parent = "math-review-parent"
     weight = 1
@@ -64,11 +64,10 @@
   identifier = "prob-review-parent"
   
   [[main]]
-    name = "Slides (pdf)"
+    name = "Slides"
     url = "/prob-slides/probability_2022.pdf"
     parent = "prob-review-parent"
     weight = 1
-
 
 [[main]]
   name = "Inference Lite"

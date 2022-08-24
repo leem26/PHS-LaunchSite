@@ -53,7 +53,7 @@
   
   [[main]]
     name = "Slides (pdf)"
-    url = "/math-review-slides/math-review-2022.pdf"
+    url = "/math-review-slides/math_review_2022.pdf"
     parent = "math-review-parent"
     weight = 1
 

@@ -63,11 +63,11 @@
   weight = 4
   identifier = "prob-review-parent"
   
-  # [[main]]
-  #   name = "Slides (pdf)"
-  #   # url = "/prob-slides/SummRCamp_2020_ProbStats.pdf"
-  #   parent = "prob-review-parent"
-  #   weight = 1
+  [[main]]
+    name = "Slides (pdf)"
+    url = "/prob-slides/probability_2022.pdf"
+    parent = "prob-review-parent"
+    weight = 1
 
 
 [[main]]

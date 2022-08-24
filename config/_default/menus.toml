@@ -51,11 +51,11 @@
   weight = 3
   identifier = "math-review-parent"
   
-  # [[main]]
-  #   name = "Slides (pdf)"
-  #   # url = "/math-review-slides/math_review.pdf"
-  #   parent = "math-review-parent"
-  #   weight = 1
+  [[main]]
+    name = "Slides (pdf)"
+    url = "/math-review-slides/math-review-2022.pdf"
+    parent = "math-review-parent"
+    weight = 1
 
 [[main]]
   name = "Probability"

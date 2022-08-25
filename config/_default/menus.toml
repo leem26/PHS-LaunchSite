@@ -27,6 +27,12 @@
     parent = "intro-to-phs-parent"
     weight = 3
 
+  [[main]]
+    name = "Self-Care Activities"
+    url = "https://docs.google.com/document/d/1Fk_87N8liJ0P_5nAgCDThV-FRRTPoLw01gu2AKEEHYI/edit?usp=sharing"
+    parent = "intro-to-phs-parent"
+    weight = 4
+
 [[main]]
   name = "Notation"
   url = "notation"

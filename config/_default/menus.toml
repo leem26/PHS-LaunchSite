@@ -98,7 +98,13 @@
     url = "/intro-to-r/R-setup-slides/R-setup.pdf"
     parent = "intro-to-r-parent"
     weight = 1
-    
+  
+[[main]]
+  name = "Feedback!"
+  url = "https://docs.google.com/forms/d/e/1FAIpQLSfJbx49XQ_aoW_9yWbjS-fPYVSoKMz4myiEQFxJcgMoGBgazQ/viewform"
+  weight = 7
+  identifier = "feedback"
+
   # [[main]]
   #   name = "Github Repo"
   #   url = "https://github.com/jrcordes/Intro_to_R_SummR_Camp_2020"

@@ -44,12 +44,18 @@
     url = "/notation-slides/bootcamp_mathematicalNotation.pdf"
     parent = "notation-parent"
     weight = 1
+
+  [[main]]
+    name = "Not. Slides Annotated"
+    url = "/notation-slides/bootcamp_mathematicalNotation_annotated.pdf"
+    parent = "notation-parent"
+    weight = 2
   
   [[main]]
     name = "R Sweave Guide"
     url = "/sweave-guide/guide.pdf"
     parent = "notation-parent"
-    weight = 2
+    weight = 3
 
 [[main]]
   name = "Math"

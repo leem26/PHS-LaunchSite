@@ -81,11 +81,11 @@
   weight = 5
   identifier = "regExParent"
   
-  # [[main]]
-  #   name = "Slides (pdf)"
-  #   # url = "/regressionSlides/slides.pdf"
-  #   parent = "regExParent"
-  #   weight = 1
+  [[main]]
+    name = "Slides (pdf)"
+    url = "/inference-lite/Covariance_Correlation.pdf"
+    parent = "regExParent"
+    weight = 1
   
 [[main]]
   name = "Intro to R"
